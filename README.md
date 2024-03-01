@@ -1,3 +1,5 @@
+# Fork for minimal adjustments in STYLE options and fixing missing translation functions
+
 # CakeLTE: AdminLTE plugin for CakePHP 4.x
 
 ## Getting Started
