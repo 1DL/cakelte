@@ -1,6 +1,7 @@
 <?php
 
 use CakeLte\Style\Header;
+use CakeLte\Style\SidebarHeader;
 use CakeLte\Style\Sidebar;
 
 return [
@@ -17,6 +18,11 @@ return [
             'border' => true,
             'style' => Header::STYLE_WHITE,
             'dropdown-legacy' => false,
+        ],
+
+        'sidebar_header' => [
+            'background_style'  => SidebarHeader::STYLE_BG_DARK_WHITE,
+            'brand_style'       => SidebarHeader::STYLE_BRAND_LIGHT,
         ],
 
         'sidebar' => [
