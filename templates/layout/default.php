@@ -40,9 +40,9 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar <?= $this->CakeLte->getSidebarClass() ?>">
             <!-- Brand Logo -->
-            <a href="<?= $this->Url->build('/') ?>" class="brand-link">
+            <a href="<?= $this->Url->build('/') ?>" class="<?= $this->CakeLte->getSidebarHeaderClass() ?> brand-link">
                 <?= $this->Html->image($this->CakeLte->getConfig('app-logo'), ['alt' => $this->CakeLte->getConfig('app-name') . ' logo', 'class' => 'brand-image']) ?>
-                <span class="brand-text font-weight-light"><?= $this->CakeLte->getConfig('app-name') ?></span>
+                <span class="<?= $this->CakeLte->getSidebarHeaderBrandClass() ?> brand-text font-weight-light"><?= $this->CakeLte->getConfig('app-name') ?></span>
             </a>
             <!-- Sidebar -->
             <div class="sidebar">

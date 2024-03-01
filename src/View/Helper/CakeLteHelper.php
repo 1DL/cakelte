@@ -8,6 +8,7 @@ use Cake\Log\Log;
 use Cake\View\Helper;
 use CakeLte\Style\Header;
 use CakeLte\Style\Sidebar;
+use CakeLte\Style\SidebarHeader;
 
 /**
  * CakeLte helper
@@ -23,6 +24,7 @@ class CakeLteHelper extends Helper
 
     public Header $Header;
     public Sidebar $Sidebar;
+    public SidebarHeader $SidebarHeader;
 
     /**
      * @inheritDoc
@@ -39,6 +41,7 @@ class CakeLteHelper extends Helper
         $this->setConfig($config);
         $this->Header = new Header($this);
         $this->Sidebar = new Sidebar($this);
+        $this->SidebarHeader = new SidebarHeader($this);
         parent::initialize($config);
     }
 
@@ -87,6 +90,24 @@ class CakeLteHelper extends Helper
             'elevation-4',
             $this->getConfig('sidebar.fixed') ? 'layout-fixed' : null,
             $this->getConfig('sidebar.disabled-auto-expand') ? 'sidebar-no-expand' : null,
+        ]);
+
+        return implode(' ', $output);
+    }
+
+    public function getSidebarHeaderClass(): string
+    {
+        $output = array_filter([
+            $this->getConfig('sidebar_header.background_style') ? $this->getConfig('sidebar_header.background_style') : null,
+        ]);
+
+        return implode(' ', $output);
+    }
+
+    public function getSidebarHeaderBrandClass(): string
+    {
+        $output = array_filter([
+            $this->getConfig('sidebar_header.brand_style') ? $this->getConfig('sidebar_header.brand_style') : null,
         ]);
 
         return implode(' ', $output);
